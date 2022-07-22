@@ -1,0 +1,8 @@
+<h1>{{companies.companies_list}}</h1>
+<ul>
+    {% for employees in companies.employees_set.all%}
+    <li>
+        {{employees.first_name}} -- {{employees.last_name}} --{{employees.age}} 
+    </li>{%endfor%}
+</ul>
+<!--<a href="{url 'companies:detail' commpanies.id}"-->

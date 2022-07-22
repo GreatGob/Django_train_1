@@ -1,0 +1,13 @@
+<html>
+    <head>Companies link list</head>
+    <body>
+        {% if companies_list %}
+        <ul>
+            {%for companies in companies_list%}
+            <li><a href = " {%url 'companies:detail' companies.id %}">{{companies.companies_list}}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No companies are available.</p>
+    </body>
+</html>

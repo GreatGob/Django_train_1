@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+virtualenv = "*"
+tensorflow = "==2.9.1"
+uvicorn = "==0.12.2"
+fastapi = "==0.63.0"
+django = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

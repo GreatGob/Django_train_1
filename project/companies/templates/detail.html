@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <form action= "{% url 'companies:employees' commpanies.id%}" method="get">
+            {% csrf_token %}
+            <fieldset>
+            <h1>{{companies.companies_id}}</h1>
+            {% if error_message %}
+            <p><strong>{{error_message}}</strong></p>
+            {% endif %}
+            <ul>
+                {% for employees in companies.employees_set.all %}
+                <li><a href = "{url 'companies:detail' employees.id}">{{employees.employees_id}}</a></li>
+                {% endfor%}
+            </ul>
+        </fieldset>
+        </form>
+    </body>
+</html>

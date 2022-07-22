@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1>{{company.company_name}}</h1>
+        {%if employees_list%}
+        <ul>
+            {%for employee in employees_list%}
+            <li><a href= "{%url 'list:results' employee.id%}">{{employee.employee_name}}</a></li>
+            {%endfor%}
+        </ul>
+        {%else%}
+        <p> No list are available.</p>
+        {%endif%}
+
+        <!--{%load static%}
+        <link rel="stylesheet" type="text/css" href="{%static 'list/style2.css'%}">-->
+    </body>
+</html>

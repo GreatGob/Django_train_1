@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h1>Companies checklist</h1>
+        {%if companies_list%} 
+        <h3>
+            <ul>
+                {%for company in companies_list%}
+                <li><a href= "{%url 'list:details' company.id%}">{{company.company_name}}</a></li>
+                {%endfor%}
+            </ul>
+        </h3>
+        {%else%}
+        <p> No list are available.</p>
+        {%endif%}
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'list/style.css' %}">
+    </body>
+</html>

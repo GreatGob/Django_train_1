@@ -1,0 +1,24 @@
+<h1>
+    {{question.question_text}}
+</h1>
+
+<ul>
+    {%for choice in question.choice_set.all%}
+    <li>
+        {{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}
+    </li>
+    {%endfor%}
+</ul>
+
+<a href= "{% url 'polls:detail' question.id%}">Vote again?</a> <!--link-->
+
+
+<!--
+    Thẻ <li> xác định một mục danh sách.
+    Thẻ <li> được sử dụng bên trong danh sách có thứ tự (<ol>), danh sách không có thứ tự (<ul>) và trong danh sách menu (<menu>).
+    Trong <ul> và <menu>, các mục danh sách thường sẽ được hiển thị bằng các dấu đầu dòng.
+    Trong <ol>, các mục danh sách thường sẽ được hiển thị bằng số hoặc chữ cái.
+
+    The <style> tag is used to define style information (CSS) for a document.
+    Inside the <style> element you specify how HTML elements should render in a browser.
+-->
